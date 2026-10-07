@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Appropedia, the sustainability library</title>
+	<link rel="stylesheet" type="text/css" href="appropedia.css" />
+	<script src="appropedia.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta charset="utf-8" />
+</head>
+<body>
+	<div id="appropedia">
+		<header id="appropedia-header">
+			<a href="https://www.appropedia.org/apps/appropedia/">
+				<img id="appropedia-logo" width="450" height="90" title="Appropedia, the sustainability library" src="images/logo.svg" />
+			</a>
+		</header>
+		<main id="appropedia-main">
+			<div id="appropedia-filters">
+				<select class="appropedia-filter" id="appropedia-filter-type">
+					<option value="">Any type</option>
+					<option value="Book">Book</option>
+					<option value="Course">Course</option>
+					<option value="Encyclopedia">Encyclopedia</option>
+					<option value="Guide">Guide</option>
+					<option value="Project documentation">Project documentation</option>
+					<option value="Research">Research</option>
+				</select>
+				<select class="appropedia-filter" id="appropedia-filter-format">
+					<option value="">Any format</option>
+					<option value="html">HTML</option>
+					<option value="audio">Audio</option>
+					<option value="pdf">PDF</option>
+					<option value="zim">ZIM</option>
+					<option value="app">App</option>
+					<option value="physical">Physical book</option>
+				</select>
+				<select class="appropedia-filter" id="appropedia-filter-language">
+					<option value="">Any language</option>
+					<option value="en">English</option>
+					<option value="es">Español</option>
+				</select>
+				<select class="appropedia-filter" id="appropedia-filter-sdg">
+					<option value="">Any SDG</option>
+					<option value="01">01 No poverty</option>
+					<option value="02">02 Zero hunger</option>
+					<option value="03">03 Good health and well-being</option>
+					<option value="04">04 Quality education</option>
+					<option value="05">05 Gender equality</option>
+					<option value="06">06 Clean water and sanitation</option>
+					<option value="07">07 Affordable and clean energy</option>
+					<option value="08">08 Decent work and economic growth</option>
+					<option value="09">09 Industry, innovation and infrastructure</option>
+					<option value="10">10 Reduced inequalities</option>
+					<option value="11">11 Sustainable cities and communities</option>
+					<option value="12">12 Responsible consumption and production</option>
+					<option value="13">13 Climate action</option>
+					<option value="14">14 Life below water</option>
+					<option value="15">15 Life on land</option>
+					<option value="16">16 Peace, justice and strong institutions</option>
+					<option value="17">17 Partnerships for the goals</option>
+				</select>
+				<select class="appropedia-filter" id="appropedia-filter-year">
+					<option value="">Any year</option>
+					<option value="2024">2024</option>
+					<option value="2023">2023</option>
+					<option value="2022">2022</option>
+					<option value="2021">2021</option>
+					<option value="2020">2020</option>
+					<option value="2019">2019</option>
+					<option value="2018">2018</option>
+					<option value="2017">2017</option>
+					<option value="2016">2016</option>
+					<option value="2015">2015</option>
+					<option value="2014">2014</option>
+					<option value="2013">2013</option>
+					<option value="2012">2012</option>
+					<option value="2011">2011</option>
+					<option value="2010">2010</option>
+					<option value="2009">2009</option>
+					<option value="2008">2008</option>
+					<option value="2007">2007</option>
+					<option value="2006">2006</option>
+					<option value="2005">2005</option>
+				</select>
+				<select class="appropedia-filter" id="appropedia-filter-publisher">
+					<option value="">Any publisher</option>
+					<option value="appropedia">Appropedia</option>
+					<option value="others">Others</option>
+				</select>
+			</div>
+			<div id="appropedia-covers">Loading...</div>
+			<dialog id="appropedia-publication-dialog">
+				<button id="appropedia-publication-dialog-close-button">&#x2715;</button>
+				<div id="appropedia-publication-dialog-content"></div>
+			</dialog>
+		</main>
+		<footer id="appropedia-footer">
+			<a href="">Privacy</a>
+			<a href="">Contact</a>
+			<a href="https://www.appropedia.org/Welcome_to_Appropedia">Wiki</a>
+		</footer>
+	</div>
+</body>
+
+<template id="appropedia-cover-template">
+	<img class="appropedia-cover" />
+</template>
+	
+<template id="appropedia-play-button-template">
+	<button class="appropedia-play-button" title="Play audio">&#9658;</button>
+</template>
+
+<template id="appropedia-publication-template">
+	<div class="appropedia-publication">
+		<img class="appropedia-publication-thumb" width="150" height="225" />
+		<div class="appropedia-publication-details">
+			<div class="appropedia-publication-type"></div>
+			<h3 class="appropedia-publication-title"></h3>
+			<div class="appropedia-publication-subtitle"></div>
+			<p class="appropedia-publication-description"></p>
+			<div class="appropedia-publication-buttons">
+				<button class="appropedia-publication-button appropedia-publication-online">Read online</button>
+				<button class="appropedia-publication-button appropedia-publication-audio">Listen audio</button>
+				<button class="appropedia-publication-button appropedia-publication-pdf">Download PDF</button>
+				<button class="appropedia-publication-button appropedia-publication-zim">Download ZIM</button>
+				<button class="appropedia-publication-button appropedia-publication-app">Use app</button>
+			</div>
+			<div class="appropedia-publication-contents">
+				<button class="show-contents-button">Show contents</button>
+			</div>
+		</div>
+	</div>
+</template>
+
+</html>
